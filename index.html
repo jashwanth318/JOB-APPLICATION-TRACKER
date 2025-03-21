@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Job Application Tracker</h1>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search by Company or Role" onkeyup="searchApplications()">
+      <select id="filterStatus" onchange="filterApplications()">
+        <option value="">All Statuses</option>
+        <option value="Applied">Applied</option>
+        <option value="Interviewing">Interviewing</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Offer">Offer</option>
+      </select>
+    </div>
+
+    <form id="applicationForm">
+      <input type="text" id="companyName" placeholder="Company Name" required />
+      <input type="text" id="role" placeholder="Role" required />
+      <input type="date" id="dateApplied" required />
+      <select id="status">
+        <option value="Applied">Applied</option>
+        <option value="Interviewing">Interviewing</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Offer">Offer</option>
+      </select>
+      <button type="submit" id="addApplicationButton" disabled>Add Application</button>
+    </form>
+    
+    <h2>Applications</h2>
+    <table id="applicationsTable">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Date Applied</th>
+          <th>Actions</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
